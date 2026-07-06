@@ -451,3 +451,15 @@ list := NewList[int](1, 2, 3)
 - **Dependencies**: Scan vulnerabilities thường xuyên: `govulncheck ./...`.
 - **TLS**: Dùng TLS cho mọi network communication.
 - **Rate limiting**: Implement cho public APIs (Uber ratelimit / Leaky Bucket).
+
+## 15. Modern Conventions & ID Generation
+
+- **Sử dụng `any` thay cho `interface{}`**:
+  - Dùng `any` cho tất cả các khai báo kiểu dữ liệu chung thay thế hoàn toàn cho `interface{}` giúp code sạch, gọn và hiện đại hơn.
+- **Sinh khóa chính ID dạng UUID/ULID**:
+  - Ưu tiên sử dụng **UUID v7** làm khóa chính (primary key) nhờ khả năng sắp xếp theo thời gian (time-ordered), giảm thiểu phân mảnh index trong DB.
+  - Nếu không sử dụng UUID v7, sử dụng **ULID** làm giải pháp thay thế.
+  - Thứ tự ưu tiên bắt buộc: **UUID v7 -> ULID**.
+- **Tuyệt đối không Hardcode (No Hardcoded Literals)**:
+  - Tránh hardcode trực tiếp các chuỗi định danh hệ thống (như Roles, Statuses, User Types, Permissions,...) hay các số ma thuật (magic numbers) rải rác trong mã nguồn logic xử lý.
+  - Phải tập hợp và khai báo chúng một cách tường minh thành các hằng số (`const`) có ý nghĩa rõ ràng trong một package cấu trúc dùng chung (ví dụ: `internal/common`), giúp dễ dàng bảo trì và loại bỏ hoàn toàn nguy cơ gõ sai chính tả (typos).

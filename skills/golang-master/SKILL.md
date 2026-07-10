@@ -1,6 +1,6 @@
 ---
 name: golang-master
-description: Comprehensive Go/Golang best practices, code review, and continuous learning skill. Use when writing, reviewing, debugging, or optimizing Go code. Covers idiomatic Go patterns, recommended tech stack, performance optimization, concurrency, error handling, testing, and project structure.
+description: Comprehensive Go/Golang best practices, code review, testing, and continuous learning skill. Triggers on writing, reviewing, debugging, optimizing, or testing Go code. Specifically covers idiomatic Go patterns, recommended tech stack, performance optimization, concurrency, error handling, project structure, writing tests, unit test, integration test, mock, mockery, mock service, mock repository, assertions, table-driven tests, handler test, kiểm thử, viết test, giả lập cơ sở dữ liệu.
 ---
 
 # Go Master — Kỹ năng Go Toàn diện
@@ -20,6 +20,7 @@ Skill này giúp viết Go code chất lượng cao, review code hiệu quả, v
 ### Trước khi viết code Go
 - Đọc [references/go_best_practices.md](references/go_best_practices.md) để nắm các pattern và gotchas.
 - Kiểm tra [references/go_recommended_stack.md](references/go_recommended_stack.md) để dùng đúng thư viện/công cụ khuyến nghị.
+- Xem [references/go_testing_best_practices.md](references/go_testing_best_practices.md) để nắm rõ cách phân tích, giả lập và viết unit test cho các layers (Handler, Service, Repository).
 
 ### Khi review hoặc tối ưu hiệu năng
 - Đối chiếu với [references/go_code_review_checklist.md](references/go_code_review_checklist.md).

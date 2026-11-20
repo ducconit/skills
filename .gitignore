@@ -1,0 +1,12 @@
+# Generated pentest working data - never commit
+*.sqlite3
+*.sqlite
+*.db
+*.db-journal
+*.log
+*.tmp
+reports/
+.env
+.env.*
+__pycache__/
+*.pyc
